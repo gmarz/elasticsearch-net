@@ -13,7 +13,7 @@ Similarily <code>GetMany()</code> is now called <code>SourceMany()</code>.</p>
 <h3 id="renamed-queryresponse-to-searchresponse">Renamed QueryResponse to SearchResponse</h3>
 <p>The fact that <code>client.Search&lt;T&gt;()</code> returns a <code>QueryResponse&lt;T&gt;</code> and not a <code>SearchResponse&lt;T&gt;</code> never felt right to me, NEST 1.0 therefor renamed <code>QueryResponse&lt;T&gt;</code> to <code>SearchResponse&lt;T&gt;</code></p>
 <h4 id="alias-helpers">Alias helpers</h4>
-<p>NEST 0.12.0 had some alias helpers, <code>SwapAlias()</code>, <code>GetIndicesPointingToAlias()</code> these have been removed in favor of just <code>Alias()</code> and <code>GetAliases()</code>. Especially the later could benefit from some extension methods that make the common use cases a bit easier to program with. These did not make the beta release.</p>
+<p><code>SwapAlias()</code> has been removed in favor of the new <code>.Alias()</code> method which maps closer to the Elasticsearch API</p>
 <h4 id="fields-vs-sourceinclude-">Fields() vs SourceInclude()</h4>
 <p>Prior to Elasticsearch you could specify to return only certain fields  and they would return like this:</p>
 <pre><code>...

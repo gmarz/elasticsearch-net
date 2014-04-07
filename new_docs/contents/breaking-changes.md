@@ -32,7 +32,7 @@ The fact that `client.Search<T>()` returns a `QueryResponse<T>` and not a `Searc
 
 #### Alias helpers
 
-NEST 0.12.0 had some alias helpers, `SwapAlias()`, `GetIndicesPointingToAlias()` these have been removed in favor of just `Alias()` and `GetAliases()`. Especially the later could benefit from some extension methods that make the common use cases a bit easier to program with. These did not make the beta release.
+`SwapAlias()` has been removed in favor of the new `.Alias()` method which maps closer to the Elasticsearch API
 
 #### Fields() vs SourceInclude()
 

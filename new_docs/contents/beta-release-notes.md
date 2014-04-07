@@ -44,7 +44,7 @@ Please read [the new documentation for Elasticsearch.Net](/elasticsearch-net/qui
 This release consists of 300+ commits over a 4 month timespan so will just list the highlights
 
 ### Aggregations
-All 1.0 aggregations have been mapped in NEST 1.0.
+All 1.0 and 1.1! aggregations have been mapped in NEST 1.0.
 
      var results = this._client.Search<ElasticsearchProject>(s=>s
         .Size(0)
@@ -136,7 +136,7 @@ A huge thank you goes out to the folks who submitted the following pull requests
 * [#565](https://github.com/elasticsearch/elasticsearch-net/pull/565) Thrift connection does not clean up properly after going into faulted state. ty @danp60 !
 
 In addition a huge thank you goes out to all the folks who gave continuous feedback on the state of `master` while it underwent major refactoring. 
-A special shout out to @synhershko and @icanhasjonas for opening [#522](https://github.com/elasticsearch/elasticsearch-net/pull/522) and [#537](https://github.com/elasticsearch/elasticsearch-net/pull/537)
+A special shout out to @synhershko and @icanhasjonas for opening [#565](https://github.com/elasticsearch/elasticsearch-net/pull/565) and [#537](https://github.com/elasticsearch/elasticsearch-net/pull/537)
 
 Seeing [tweets](https://twitter.com/luigiberrettini/status/448413008604438528) [like](https://twitter.com/luigiberrettini/status/448413008604438528) [this](https://twitter.com/tonariman/status/451354457133969408) is awesome, ty @nariman-haghighi & @luigiberrettini !
 

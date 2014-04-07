@@ -1,2 +1,98 @@
 <html><head><title>Nest - Beta Release Notes</title><meta http-equiv="cache-control" content="no-cache"/><meta http-equiv="pragma" content="no-cache"/><meta http-equiv="content-type" content="text/html;charset=utf-8"/><meta http-equiv="expires" content="0"/><meta name="description" content="elasticsearch"/><meta name="keywords" content="nest, elasticsearch, .net, client"/><meta name="author" content="martijn laarman"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<script src="/scripts/html5shiv.js"></script><link rel="stylesheet" type="text/css" href="/styles/normalize.css"/><link rel="stylesheet" type="text/css" href="/styles/layout.css"/><link rel="stylesheet" type="text/css" href="/styles/pygments.css"/><link rel="stylesheet" type="text/css" href="/styles/pygments.css"/><link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/><link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans" rel="stylesheet" type="text/css"/><link href="/prettify/prettify.css" type="text/css" rel="stylesheet"/><link href="/prettify/sunburst.css" type="text/css" rel="stylesheet"/><script src="//code.jquery.com/jquery.min.js" type="text/javascript"></script><script type="text/javascript" src="/prettify/prettify.js"></script><script type="text/javascript" src="/prettify/fix_code_tags.js"></script></head><body><div class="wrapper"><header class="header"><div class="actions"><iframe src="//ghbtns.com/github-btn.html?user=elasticsearch&amp;repo=elasticsearch-net&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe><iframe src="//ghbtns.com/github-btn.html?user=elasticsearch&amp;repo=elasticsearch-net&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></div><img src="/images/elasticsearch-net-nuget-icon.png" width="48" height="48"/><h1>Elasticsearch.Net & NEST</h1><p>Documentation</p></header><div class="divide"></div><div class="middle"><div class="container"><main class="content"></main></div><aside class="left-sidebar"><aside id="menu"><ul><li><a href="/">Home</a><a href="/contributing.html">Contributing</a><a href="/building.html">Building</a><a href="/breaking-changes.html">1.0 Breaking Changes</a><a href="https://github.com/elasticsearch/elasticsearch-net/releases">Release Notes</a></li></ul><ul id="elasticsearch-net"><h4 class="title">Elasticsearch.Net</h4><ul><li><a href="/elasticsearch-net/quick-start.html">Quick Start</a></li><li><a href="/elasticsearch-net/connecting.html">Connecting</a></li><li><a href="/elasticsearch-net/cluster-failover.html">Cluster failover</a></li><li><a href="/elasticsearch-net/building-requests.html">Building requests</a></li><li><a href="/elasticsearch-net/handling-responses.html">Handling responses</a></li><li><a href="/elasticsearch-net/errors.html">Errors</a></li></ul></ul><ul id="nest"><h4 class="title">NEST</h4><ul><li><a href="/nest/quick-start.html">Quick Start</a></li><li><a href="/nest/connecting.html">Connecting</a></li><li><a href="/nest/index-type-inference.html">Type/Index Inference</a></li><li><a href="/nest/handling-responses.html">Handling responses</a></li><li><a href="/nest/writing-queries.html">Writing queries</a></li></ul><li><h4><a href="/nest/core/"><i class="fa fa-chevron-right"></i>Core</a></h4></li><li><h4><a href="/nest/indices/aliases.html"><i class="fa fa-chevron-right"></i>Indices</a></h4></li><li><h4><a href="/nest/cluster/health.html"><i class="fa fa-chevron-right"></i>Cluster</a></h4></li><li><h4><a href="/nest/search/basics.html"><i class="fa fa-chevron-right"></i>Search</a></h4></li><li><h4><a href="/nest/facets/handling.html"><i class="fa fa-chevron-right"></i>Facets</a></h4></li><li><h4><a href="/nest/query/text.html"><i class="fa fa-chevron-right"></i>Query DSL</a></h4></li><li><h4><a href="/nest/filter/and.html"><i class="fa fa-chevron-right"></i>Filter DSL</a></h4></li></ul></aside></aside></div><footer class="footer"></footer></div></body></html>
+<script src="/scripts/html5shiv.js"></script><link rel="stylesheet" type="text/css" href="/styles/normalize.css"/><link rel="stylesheet" type="text/css" href="/styles/layout.css"/><link rel="stylesheet" type="text/css" href="/styles/pygments.css"/><link rel="stylesheet" type="text/css" href="/styles/pygments.css"/><link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/><link href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans" rel="stylesheet" type="text/css"/><link href="/prettify/prettify.css" type="text/css" rel="stylesheet"/><link href="/prettify/sunburst.css" type="text/css" rel="stylesheet"/><script src="//code.jquery.com/jquery.min.js" type="text/javascript"></script><script type="text/javascript" src="/prettify/prettify.js"></script><script type="text/javascript" src="/prettify/fix_code_tags.js"></script></head><body><div class="wrapper"><header class="header"><div class="actions"><iframe src="//ghbtns.com/github-btn.html?user=elasticsearch&amp;repo=elasticsearch-net&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe><iframe src="//ghbtns.com/github-btn.html?user=elasticsearch&amp;repo=elasticsearch-net&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></div><img src="/images/elasticsearch-net-nuget-icon.png" width="48" height="48"/><h1>Elasticsearch.Net & NEST</h1><p>Documentation</p></header><div class="divide"></div><div class="middle"><div class="container"><main class="content"><h1 id="1-0-beta-1">1.0 beta 1</h1>
+<p>It&#39;s been 4 months since <a href="https://github.com/elasticsearch/elasticsearch-net/releases/tag/0.12.0.0">0.12.0</a> was released and a lot has happened in those months, elasticsearch released 1.0 and even a 1.1. With this release announcement I&#39;m pleased to say NEST finally caught up and brings (almost) all the awesome that 1.0 brings to the .NET world. </p>
+<p>Before diving in all the technical details of the 1.0 release I would first like to express a sincere thank you to all of you who&#39;ve reached out on twitter, github issues and mail. Your kind words made all the difference these past 4 months switching jobs, refactoring the client, implementing 1.0 features. </p>
+<p>What’s the ‘beta’ mean? All tests are passing, but we are still waiting for at least one new feature to land. Additionally, beta means that some new features may change before general release. In addition this beta period is intended to solicit as much feedback from everyone on breaking changes/oversights/bugs.</p>
+<h1 id="breaking-changes">Breaking Changes</h1>
+<p>This is a 1.0 release and will have many breaking changes. The <code>0.*</code> NEST releases have been around since 2010 and it&#39;s internals were showing its age. This 1.0 release represents an almost completely refactored <code>NEST</code>.</p>
+<p>A separate section that lists the breaking changes <a href="http://nest.azurewebsites.net/breaking-changes.html">can be found here</a>. If you find any breaking changes that are not documented we&#39;d love to hear about them on our <a href="http://www.github.com/elasticsearch/elasticsearch-net/issues">github issues</a>.</p>
+<h1 id="split-in-to-two-">Split in to two.</h1>
+<p>NEST 0.12.0 introduced a seperate, completely generated, client interface called <code>IRawElasticClient</code> which allowed you to build your own requests and responses without having to worry about building endpoints. Much of the work for 1.0 has been around refactoring this out of the NEST assembly and make NEST&#39;s strongly typed <code>IElasticClient</code> use <code>IRawElasticClient</code> internally. </p>
+<h2 id="elasticsearch-net">Elasticsearch.Net</h2>
+<p> Elasticsearch.Net&#39;s client is now called <code>IElasticsearchClient</code> and is almost completely generated from the client API spec and exposes all the Elasticsearch 1.0 endpoints. It brings a client that&#39;s inline in spirit and architecture with the other official elasticsearch client libraries.</p>
+<p><code>Elasticsearch.Net</code> leaves all the request and response mapping up to you although it comes with support for mapping responses into a dynamic container (a slightly modifed DynamicDictionary from <a href="http://www.nancyfx.org/">NancyFx</a>) out of the box. Elasticsearch.Net is very much intended to be used by other high level clients.</p>
+<p>Another big new feature is <a href="/elasticearch-net/cluster-failover.html">built-in clusterfailover/connectionpooling support</a> support.</p>
+<p>Please read <a href="/elasticsearch-net/quick-start.html">the new documentation for Elasticsearch.Net</a> to find out more</p>
+<h2 id="nest">NEST</h2>
+<p><code>NEST</code>&#39;s client classes have completely been rewritten and internally uses and still exposes the <code>Elasticsearch.Net</code> client. It benefits from it&#39;s cluster failover support and it no longer has complicated path builders.</p>
+<p><code>NEST</code> is highly opinionated how you should build and consume elasticsearch responses and comes with a strongly typed query dsl. NEST has a really high coverage of mapped endpoints and <a href="https://github.com/elasticsearch/elasticsearch-net/issues?direction=desc&amp;milestone=5&amp;page=1&amp;sort=updated&amp;state=open">the unmapped API&#39;s are all identified and on the roadmap</a></p>
+<h1 id="changelog">Changelog</h1>
+<p>This release consists of 300+ commits over a 4 month timespan so will just list the highlights</p>
+<h3 id="aggregations">Aggregations</h3>
+<p>All 1.0 and 1.1! aggregations have been mapped in NEST 1.0.</p>
+<pre><code> var results = this._client.Search&lt;ElasticsearchProject&gt;(s=&gt;s
+    .Size(0)
+    .Aggregations(a=&gt;a
+        .Nested(&quot;contributors&quot;, n=&gt;n
+            .Path(p=&gt;p.Contributors)
+            .Aggregations(t=&gt;t
+                .Average(&quot;avg_age&quot;, m=&gt;m
+                    .Field(p=&gt;p.Contributors.First().Age)
+                )
+            )
+        )
+    )
+);
+
+var bucket = results.Aggs.Nested(&quot;contributors&quot;);
+bucket.DocCount.Should().BeGreaterThan(1);
+var averageAge = bucket.Average(&quot;avg_age&quot;);
+averageAge.Value.Should().HaveValue().And.BeGreaterOrEqualTo(18);
+</code></pre><h3 id="conditionless-query-construct">Conditionless() query construct</h3>
+<p>NEST comes with a powerful feature called conditionless queries which greatly simplifies writing queries with optional parts.</p>
+<p>Consider this example:</p>
+<pre><code>.Query(q=&gt;q.Term(&quot;this_term_is_conditionless&quot;, &quot;&quot;))
+</code></pre><p>NEST will remove the term query and default to not sending a query at all in the body (equivalant to <code>match_all</code>)</p>
+<p>But wat if you want a different query to be run in instead of <code>match_all</code>? This is where the <code>Conditionless</code> construct comes into play:</p>
+<pre><code>.Query(q=&gt;q
+    .Conditionless(qs=&gt;qs
+        .Query(qcq=&gt;qcq.Term(&quot;this_term_is_conditionless&quot;, &quot;&quot;))
+        .Fallback(qcf=&gt;qcf.Term(&quot;name&quot;, &quot;do_me_instead&quot;)
+    )
+)
+</code></pre><p>Now we&#39;ll fallback into a <code>term</code> query on <code>name</code> instead. Note that fallbacks themselves can be conditionless and <code>Conditionless()</code> constructs can be nested inside fallbacks as well.</p>
+<p>Also if you want to disable conditionless queries you can specify <code>.Strict()</code> on individual parts in the query or globally on the search descriptor. </p>
+<pre><code>.Query(q=&gt;q.Strict().Term(&quot;this_term_is_conditionless&quot;, &quot;&quot;))
+</code></pre><p>The previous example will throw. To enable conditionless only for certain parts in your query you can also do:</p>
+<pre><code>.Strict()
+.Query(q=&gt;
+    q.Term(&quot;must&quot;, &quot;exist&quot;) 
+    &amp;&amp; q.Strict(false).Term(&quot;this_term_is_conditionless&quot;, &quot;&quot;)
+)
+</code></pre><p>The previous example will just send a <code>term</code> query on the field <code>must</code>, NEST is smart enough to infer the bool is no longer needed.</p>
+<p>Finally if you really intend to send a conditionless query to Elasticsearch you can use <code>.Verbatim()</code></p>
+<pre><code>.Query(q=&gt;q.Verbatim().Term(&quot;this_term_is_conditionless&quot;, &quot;&quot;))
+</code></pre><p>The <code>Strict()</code> and <code>Verbatim()</code> constructs are not new but worth repeating in this context.</p>
+<h3 id="pull-requests">Pull Requests</h3>
+<p>As with every release the level of community engangement never ceases to amaze me. Whoever proclaimed OSS in .net is dead?</p>
+<p>A huge thank you goes out to the folks who submitted the following pull requests.</p>
+<ul>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/412">#412</a> Add <code>random_score</code> support for FunctionScore(). ty @vovikdrg !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/419">#419</a> Add script score support for FunctionScore().  ty @V1tOr !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/419">#425</a> Added support for index status API. ty @richclement !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/430">#430</a> Allow any object to be used for a partial update. ty @Plasma !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/431">#431</a> Add Type as constructor parameter to CustomAnalyzer. ty @sschlesier !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/440">#440</a> Support dictionary key evaluation in expressions. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/440">#440</a> Support dictionary key evaluation in expressions. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/444">#444</a> Renamed QueryString() to Query() MatchQueryDescriptor. ty @gmarz !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/445">#445</a> Renamed QueryString() to Query() MultiMatchQueryDescriptor. ty @gmarz !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/446">#446</a> Renamed QueryString() to Query() TextQueryDescriptor. ty @gmarz !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/447">#447</a> Added Params() support to script on RangeFacetDescriptor. ty @angielamb !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/448">#448</a> Added filter option in <code>function_score</code> queries. ty @gmarz !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/479">#479</a> Added detail response mapped to <code>_explain</code>. ty @andreabalducci !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/488">#448</a> Added nested field attribute mapped back in. ty @lukapor !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/490">#490</a> Added size parameter to CompletionSuggestDescriptor. ty @bgiromini !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/540">#530</a> Added missing sort options. ty @Grastveit !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/536">#536</a> Worlds smallest pull request (typo). ty @ChrisMcKee !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/541">#541</a> FunctionScoreQueryDescriptor boost mode. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/542">#542</a> Allow fields boosting when using expressions in multimatch query. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/545">#545</a> Show requests/response as json string in debug mode when available. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/548">#548</a> Create cache directory for code generation if it does not exist. ty @gmarz !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/550">#550</a> Fixed typos, formatting, verbiage, naming conventions in the documentation. ty @paigecook !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/563">#563</a> Added support for new text query types on the <code>multi_match</code> query. ty @azubanov !</li>
+<li><a href="https://github.com/elasticsearch/elasticsearch-net/pull/565">#565</a> Thrift connection does not clean up properly after going into faulted state. ty @danp60 !</li>
+</ul>
+<p>In addition a huge thank you goes out to all the folks who gave continuous feedback on the state of <code>master</code> while it underwent major refactoring. 
+A special shout out to @synhershko and @icanhasjonas for opening <a href="https://github.com/elasticsearch/elasticsearch-net/pull/565">#565</a> and <a href="https://github.com/elasticsearch/elasticsearch-net/pull/537">#537</a></p>
+<p>Seeing <a href="https://twitter.com/luigiberrettini/status/448413008604438528">tweets</a> <a href="https://twitter.com/luigiberrettini/status/448413008604438528">like</a> <a href="https://twitter.com/tonariman/status/451354457133969408">this</a> is awesome, ty @nariman-haghighi &amp; @luigiberrettini !</p>
+</main></div><aside class="left-sidebar"><aside id="menu"><ul><li><a href="/">Home</a><a href="/contributing.html">Contributing</a><a href="/building.html">Building</a><a href="/breaking-changes.html">1.0 Breaking Changes</a><a href="https://github.com/elasticsearch/elasticsearch-net/releases">Release Notes</a></li></ul><ul id="elasticsearch-net"><h4 class="title">Elasticsearch.Net</h4><ul><li><a href="/elasticsearch-net/quick-start.html">Quick Start</a></li><li><a href="/elasticsearch-net/connecting.html">Connecting</a></li><li><a href="/elasticsearch-net/cluster-failover.html">Cluster failover</a></li><li><a href="/elasticsearch-net/building-requests.html">Building requests</a></li><li><a href="/elasticsearch-net/handling-responses.html">Handling responses</a></li><li><a href="/elasticsearch-net/errors.html">Errors</a></li></ul></ul><ul id="nest"><h4 class="title">NEST</h4><ul><li><a href="/nest/quick-start.html">Quick Start</a></li><li><a href="/nest/connecting.html">Connecting</a></li><li><a href="/nest/index-type-inference.html">Type/Index Inference</a></li><li><a href="/nest/handling-responses.html">Handling responses</a></li><li><a href="/nest/writing-queries.html">Writing queries</a></li></ul><li><h4><a href="/nest/core/"><i class="fa fa-chevron-right"></i>Core</a></h4></li><li><h4><a href="/nest/indices/aliases.html"><i class="fa fa-chevron-right"></i>Indices</a></h4></li><li><h4><a href="/nest/cluster/health.html"><i class="fa fa-chevron-right"></i>Cluster</a></h4></li><li><h4><a href="/nest/search/basics.html"><i class="fa fa-chevron-right"></i>Search</a></h4></li><li><h4><a href="/nest/facets/handling.html"><i class="fa fa-chevron-right"></i>Facets</a></h4></li><li><h4><a href="/nest/query/text.html"><i class="fa fa-chevron-right"></i>Query DSL</a></h4></li><li><h4><a href="/nest/filter/and.html"><i class="fa fa-chevron-right"></i>Filter DSL</a></h4></li></ul></aside></aside></div><footer class="footer"></footer></div></body></html>
