@@ -24,6 +24,9 @@ namespace Nest
 		[JsonProperty("fragment_size")]
 		int? FragmentSize { get; set; }
 
+        [JsonProperty("no_match_size")]
+        int? NoMatchSize { get; set; }
+
 		[JsonProperty("number_of_fragments")]
 		int? NumberOfFragments { get; set; }
 
@@ -61,6 +64,7 @@ namespace Nest
 		public IEnumerable<string> PreTags { get; set; }
 		public IEnumerable<string> PostTags { get; set; }
 		public int? FragmentSize { get; set; }
+		public int? NoMatchSize { get; set; }
 		public int? NumberOfFragments { get; set; }
 		public int? FragmentOffset { get; set; }
 		public int? BoundaryMaxSize { get; set; }
@@ -84,6 +88,8 @@ namespace Nest
 		IEnumerable<string> IHighlightField.PostTags { get; set; }
 
 		int? IHighlightField.FragmentSize { get; set; }
+
+		int? IHighlightField.NoMatchSize { get; set; }
 
 		int? IHighlightField.NumberOfFragments { get; set; }
 
@@ -159,6 +165,11 @@ namespace Nest
 			Self.FragmentSize = fragmentSize;
 			return this;
 		}
+        public HighlightFieldDescriptor<T> NoMatchSize(int noMatchSize)
+        {
+            Self.NoMatchSize = noMatchSize;
+            return this;
+        }
 		public HighlightFieldDescriptor<T> NumberOfFragments(int numberOfFragments)
 		{
 			Self.NumberOfFragments = numberOfFragments;
